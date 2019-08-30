@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 app.use(BASE_API_URL, router);
 app.use(logger.sendResponse);
 
-const port = process.env.SERVER_PORT || 4000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {  
   winston.info(`API running at http://localhost:${port}`);
 });
