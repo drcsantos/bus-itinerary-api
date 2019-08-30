@@ -1,0 +1,606 @@
+[
+  {
+    "id": "CSC-L10",
+    "name": "Americana",
+    "direction": "target",
+    "city": "Americana",
+    "paths": [
+      {
+        "address": "Av. de Cillo",
+        "number": 1899,
+        "reference": "Em frente ao Pag Menos",
+        "neighborhood": "Jd. São Jose",
+        "time": "06:30:00 AM",
+        "location": {
+          "lat": -22.7605579,
+          "lng": -47.3396585
+        }
+      },
+      {
+        "address": "Rua Florindo Cibin",
+        "number": 56,
+        "reference": "Loja Kopenhagen",
+        "neighborhood": "Vila Loricilda",
+        "time": "06:33:00 AM",
+        "location": {
+          "lat": -22.7500082,
+          "lng": -47.334035
+        }
+      },
+      {
+        "address": "Av. Brasil",
+        "number": 605,
+        "reference": "Posto Apollo",
+        "neighborhood": "Vila Medon",
+        "time": "06:35:00 AM",
+        "location": {
+          "lat": -22.747096,
+          "lng": -47.33676
+        }
+      },
+      {
+        "address": "Rua José Bonifácio",
+        "number": 381,
+        "reference": "Atrás da GAMA",
+        "neighborhood": "Chacara Machadinho",
+        "time": "06:39:00 AM",
+        "location": {
+          "lat": -22.740537,
+          "lng": -47.324686
+        }
+      },
+      {
+        "address": "Av. Paulista",
+        "number": 818,
+        "reference": "Após o Veterano",
+        "neighborhood": "Jd. N. S. de Fátima",
+        "time": "06:41:00 AM",
+        "location": {
+          "lat": -22.7377466,
+          "lng": -47.3172874
+        }
+      },
+      {
+        "address": "Av. Nossa Senhora de Fátima",
+        "number": 567,
+        "reference": "Escola Polivalente",
+        "neighborhood": "Jd. N. S. de Fátima",
+        "time": "06:43:00 AM",
+        "location": {
+          "lat": -22.7358464,
+          "lng": -47.3156113
+        }
+      },
+      {
+        "address": "Av. Antonio Pinto Duarte",
+        "number": 1255,
+        "reference": "Ultragas",
+        "neighborhood": "Jd. Campo Limpo",
+        "time": "06:45:00 AM",
+        "location": {
+          "lat": -22.7318127,
+          "lng": -47.3069613
+        }
+      },
+      {
+        "address": "Av. Antonio Pinto Duarte",
+        "number": 2130,
+        "reference": "Portal Americana",
+        "neighborhood": "Jd. Campo Limpo",
+        "time": "06:48:00 AM",
+        "location": {
+          "lat": -22.7294196,
+          "lng": -47.2985851
+        }
+      },
+      {
+        "address": "Rodovia Anhanguera",
+        "number": 114,
+        "reference": "Quinta Roda",
+        "neighborhood": "",
+        "time": "06:55:00 AM",
+        "location": {
+          "lat": -22.6907675,
+          "lng": -47.3112589
+        }
+      },
+      {
+        "address": "Rodovia Dom Pedro",
+        "number": "",
+        "reference": "Trajeto",
+        "neighborhood": "",
+        "city": "",
+        "time": "",
+        "location": {
+          "lat": -23.1007762,
+          "lng": -46.5763539
+        }
+      },
+      {
+        "address": "Rodovia Adhemar de Barros",
+        "number": "",
+        "reference": "Trajeto",
+        "neighborhood": "",
+        "city": "",
+        "time": "",
+        "location": {
+          "lat": -22.1279228,
+          "lng": -47.0004276
+        }
+      },
+      {
+        "address": "Av. Antarctica",
+        "number": "",
+        "reference": "Cervejaria Ambev",
+        "neighborhood": "",
+        "city": "Jaguariuna",
+        "time": "07:50:00 AM",
+        "location": {
+          "lat": -22.7066292,
+          "lng": -47.0023043
+        }
+      }
+    ],
+    "processing": 0
+  },
+  {
+    "id": "CSC-L07",
+    "name": "Centro/Cambui",
+    "direction": "target",
+    "city": "Campinas",
+    "paths": [
+      {
+        "address": "Av. Monte Castelo",
+        "number": 155,
+        "reference": "Clinica Monte Castelo",
+        "neighborhood": "Ponte Preta",
+        "time": "06:45:00 AM",
+        "location": {
+          "lat": -22.9160522,
+          "lng": -47.0491986
+        }
+      },
+      {
+        "address": "Av. Marechal Carmona",
+        "number": 987,
+        "reference": "Em frente ao N° 987",
+        "neighborhood": "Vila João Jorge",
+        "time": "06:50:00 AM",
+        "location": {
+          "lat": -22.9207714,
+          "lng": -47.0563685
+        }
+      },
+      {
+        "address": "Av. Washington Luiz",
+        "number": 248,
+        "reference": "Em frente Casa do Padeiro",
+        "neighborhood": "Vila Marieta",
+        "time": "06:52:00 AM",
+        "location": {
+          "lat": -22.9185416,
+          "lng": -47.0570476
+        }
+      },
+      {
+        "address": "Av. General Carneiro",
+        "number": 155,
+        "reference": "Escola Dom Barreto",
+        "neighborhood": "Ponte Preta",
+        "time": "06:54:00 AM",
+        "location": {
+          "lat": -22.9160243,
+          "lng": -47.0585548
+        }
+      },
+      {
+        "address": "Av. João Jorge",
+        "number": 251,
+        "reference": "Bar Galeto",
+        "neighborhood": "Vila Industrial",
+        "time": "06:55:00 AM",
+        "location": {
+          "lat": -22.9125005,
+          "lng": -47.0630233
+        }
+      },
+      {
+        "address": "Av. Aquidaban",
+        "number": 484,
+        "reference": "Ponto Hotel Ibis",
+        "neighborhood": "Centro",
+        "time": "07:01:00 AM",
+        "location": {
+          "lat": -22.9110054,
+          "lng": -47.0551087
+        }
+      },
+      {
+        "address": "Av. Aquidaban",
+        "number": 696,
+        "reference": "Microcamp",
+        "neighborhood": "Centro",
+        "time": "07:03:00 AM",
+        "location": {
+          "lat": -22.9101278,
+          "lng": -47.0535045
+        }
+      },
+      {
+        "address": "Rua General Osorio",
+        "number": 1372,
+        "reference": "Praça Carlos Gomes",
+        "neighborhood": "Centro",
+        "time": "07:09:00 AM",
+        "location": {
+          "lat": -22.9027139,
+          "lng": -47.0567743
+        }
+      },
+      {
+        "address": "Rua Barreto Leme",
+        "number": 1590,
+        "reference": "Camp Imagem",
+        "neighborhood": "Cambui",
+        "time": "07:12:00 AM",
+        "location": {
+          "lat": -22.900112,
+          "lng": -47.05640469999999
+        }
+      },
+      {
+        "address": "Av. Julio de Mesquita",
+        "number": 199,
+        "reference": "Centro de Convivencia",
+        "neighborhood": "Cambui",
+        "time": "07:13:00 AM",
+        "location": {
+          "lat": -22.9034597,
+          "lng": -47.0529234
+        }
+      },
+      {
+        "address": "Av. Julio de Mesquita",
+        "number": 175,
+        "reference": "Posto de Gasolina",
+        "neighborhood": "Cambui",
+        "time": "07:14:00 AM",
+        "location": {
+          "lat": -22.9036584,
+          "lng": -47.0527904
+        }
+      },
+      {
+        "address": "Av. Moraes Sales",
+        "number": 1778,
+        "reference": "Posto Shell",
+        "neighborhood": "Cambui",
+        "time": "07:16:00 AM",
+        "location": {
+          "lat": -22.9058744,
+          "lng": -47.0478522
+        }
+      },
+      {
+        "address": "Av. Moraes Sales",
+        "number": 723,
+        "reference": "Casa do Uniforme",
+        "neighborhood": "Cambui",
+        "time": "07:18:00 AM",
+        "location": {
+          "lat": -22.9065808,
+          "lng": -47.0564785
+        }
+      },
+      {
+        "address": "Av. Jose de Sousa Campos",
+        "number": 856,
+        "reference": "Carrefour",
+        "neighborhood": "Cambui",
+        "time": "07:36:00 AM",
+        "location": {
+          "lat": -22.8981415,
+          "lng": -47.0470538
+        }
+      },
+      {
+        "address": "Av. Jose de Sousa Campos",
+        "number": 1723,
+        "reference": "Padaria Norte Sul",
+        "neighborhood": "Cambui",
+        "time": "07:25:00 AM",
+        "location": {
+          "lat": -22.8906077,
+          "lng": -47.0466331
+        }
+      },
+      {
+        "address": "Av. Julio Prestes",
+        "number": 283,
+        "reference": "Ponto Balão Bela Vista",
+        "neighborhood": "Taquaral",
+        "time": "07:28:00 AM",
+        "location": {
+          "lat": -22.8767267,
+          "lng": -47.0445225
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": 2,
+        "reference": "Passarela da FAC",
+        "neighborhood": "Jd. Santana",
+        "time": "07:30:00 AM",
+        "location": {
+          "lat": -22.855103,
+          "lng": -47.044027
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": 1755,
+        "reference": "Ponto da CPFL",
+        "neighborhood": "Jd. Santana",
+        "time": "07:31:00 AM",
+        "location": {
+          "lat": -22.8573763,
+          "lng": -47.0455311
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": 1,
+        "reference": "Escadinha",
+        "neighborhood": "Jd. Santana",
+        "time": "07:32:00 AM",
+        "location": {
+          "lat": -22.8728077,
+          "lng": -47.0454286
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": 2,
+        "reference": "Cidade Judiciária",
+        "neighborhood": "Jd. Ninópolis",
+        "time": "07:33:00 AM",
+        "location": {
+          "lat": -22.8518461,
+          "lng": -47.0430711
+        }
+      },
+      {
+        "address": "Av. Antarctica",
+        "number": "",
+        "reference": "Cervejaria Ambev",
+        "neighborhood": "",
+        "city": "Jaguariuna",
+        "time": "07:50:00 AM",
+        "location": {
+          "lat": -22.7066292,
+          "lng": -47.0023043
+        }
+      }
+    ],
+    "processing": 0
+  },
+  {
+    "id": "CSC-L08",
+    "name": "Maternidade",
+    "direction": "target",
+    "city": "Campinas",
+    "paths": [
+      {
+        "address": "Rua Maria Monteiro",
+        "number": 788,
+        "reference": "Loja Suzarra",
+        "neighborhood": "Cambui",
+        "time": "06:58:00 AM",
+        "location": {
+          "lat": -22.8973516,
+          "lng": -47.051589
+        }
+      },
+      {
+        "address": "Rua Maria Monteiro",
+        "number": 1223,
+        "reference": "Igreja",
+        "neighborhood": "Cambui",
+        "time": "07:00:00 AM",
+        "location": {
+          "lat": -22.8936172,
+          "lng": -47.0529877
+        }
+      },
+      {
+        "address": "Rua Maria Monteiro",
+        "number": 1742,
+        "reference": "Esquina com a rua dos Alecrins",
+        "neighborhood": "Cambui",
+        "time": "07:02:00 AM",
+        "location": {
+          "lat": -22.8891167,
+          "lng": -47.0536456
+        }
+      },
+      {
+        "address": "Av. Orozimbo Maia",
+        "number": 1261,
+        "reference": "Paulistão",
+        "neighborhood": "Guanabara",
+        "time": "07:05:00 AM",
+        "location": {
+          "lat": -22.8904598,
+          "lng": -47.05862459999999
+        }
+      },
+      {
+        "address": "Av. Orozimbo Maia",
+        "number": 850,
+        "reference": "Após Av. Brasil",
+        "neighborhood": "Centro",
+        "time": "07:07:00 AM",
+        "location": {
+          "lat": -22.8952486,
+          "lng": -47.0613353
+        }
+      },
+      {
+        "address": "Rua Saturnino de Brito",
+        "number": 189,
+        "reference": "Esquina com a Francisco Gricélio",
+        "neighborhood": "Centro",
+        "time": "07:09:00 AM",
+        "location": {
+          "lat": -22.8973865,
+          "lng": -47.062485
+        }
+      },
+      {
+        "address": "Rua Dr. Antonio Alvares Lobo",
+        "number": 325,
+        "reference": "Praça Alvares Lobo",
+        "neighborhood": "Centro",
+        "time": "07:12:00 AM",
+        "location": {
+          "lat": -22.9003305,
+          "lng": -47.0664252
+        }
+      },
+      {
+        "address": "Av. Barão de Itapura",
+        "number": 535,
+        "reference": "Antiga Pegeout",
+        "neighborhood": "Botafogo",
+        "time": "07:14:00 AM",
+        "location": {
+          "lat": -22.898483,
+          "lng": -47.069501
+        }
+      },
+      {
+        "address": "Av. Barão de Itapura",
+        "number": 950,
+        "reference": "Santander",
+        "neighborhood": "Guanabara",
+        "time": "07:16:00 AM",
+        "location": {
+          "lat": -22.895683,
+          "lng": -47.0666713
+        }
+      },
+      {
+        "address": "Av. Barão de Itapura",
+        "number": 1724,
+        "reference": "Colégio Imaculada",
+        "neighborhood": "Guanabara",
+        "time": "07:19:00 AM",
+        "location": {
+          "lat": -22.8902848,
+          "lng": -47.0619704
+        }
+      },
+      {
+        "address": "Av. Barão de Itapura",
+        "number": "",
+        "reference": "Rogério Car",
+        "neighborhood": "Guanabara",
+        "time": "07:21:00 AM",
+        "location": {
+          "lat": -22.8895797,
+          "lng": -47.0617816
+        }
+      },
+      {
+        "address": "Av. Nossa Senhora de Fátima",
+        "number": 586,
+        "reference": "Supermecado Taquaral",
+        "neighborhood": "Taquaral",
+        "time": "07:22:00 AM",
+        "location": {
+          "lat": -22.8812571,
+          "lng": -47.0501488
+        }
+      },
+      {
+        "address": "Av. Nossa Senhora de Fátima",
+        "number": 723,
+        "reference": "Academia",
+        "neighborhood": "Taquaral",
+        "time": "07:23:00 AM",
+        "location": {
+          "lat": -22.8803296,
+          "lng": -47.0492176
+        }
+      },
+      {
+        "address": "Av. Nossa Senhora de Fátima",
+        "number": 1128,
+        "reference": "Residencial Taquaral",
+        "neighborhood": "Taquaral",
+        "time": "07:24:00 AM",
+        "location": {
+          "lat": -22.8795607,
+          "lng": -47.0453994
+        }
+      },
+      {
+        "address": "Av. Julio Prestes",
+        "number": 288,
+        "reference": "Balão Bela Vista",
+        "neighborhood": "Taquaral",
+        "time": "07:25:00 AM",
+        "location": {
+          "lat": -22.8770394,
+          "lng": -47.04473309999999
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": 1755,
+        "reference": "CPFL",
+        "neighborhood": "Jd. Santana",
+        "time": "07:28:00 AM",
+        "location": {
+          "lat": -22.8573763,
+          "lng": -47.0455311
+        }
+      },
+      {
+        "address": "Rod. Eng. Miguel Noel Nascentes Burnier",
+        "number": "",
+        "reference": "Cidade Judiciária",
+        "neighborhood": "Jd. Ninópolis",
+        "time": "07:30:00 AM",
+        "location": {
+          "lat": -22.8518461,
+          "lng": -47.0430711
+        }
+      },
+      {
+        "address": "Rodovia Adhemar de Barros",
+        "number": 117,
+        "reference": "Alphaville",
+        "neighborhood": "Alphaville",
+        "time": "07:33:00 AM",
+        "location": {
+          "lat": -22.79606,
+          "lng": -47.03218100000001
+        }
+      },
+      {
+        "address": "Av. Antarctica",
+        "number": "",
+        "reference": "Cervejaria Ambev",
+        "neighborhood": "",
+        "city": "Jaguariuna",
+        "time": "07:50:00 AM",
+        "location": {
+          "lat": -22.7066292,
+          "lng": -47.0023043
+        }
+      }
+    ],
+    "processing": 0
+  }
+]
