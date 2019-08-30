@@ -5,10 +5,8 @@ const responseTime = require("response-time");
 const winston = require("winston");
 const logger = require("./lib/logger");
 const morgan = require("morgan");
-const router = require("./routes");
+const apiRouter = require("./apiRouter");
 const app = express();
-
-const BASE_API_URL = "/api";
 
 app.use(morgan("short"));
 app.set("trust proxy", 1);
@@ -36,7 +34,7 @@ app.all("*", (req, res, next) => {
 app.use(responseTime());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(BASE_API_URL, router);
+app.use("/api", apiRouter);
 app.use(logger.sendResponse);
 
 const port = process.env.PORT || 4000;
