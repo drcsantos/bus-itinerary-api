@@ -22,25 +22,32 @@ const onReconnect = () => {
 	winston.info('MongoDB reconnected');
 };
 
-let db = null;
+let _db = null;
 
-module.exports = db;
+const connect = () => {
+	return new Promise((resolve, reject) => {
+		MongoClient.connect(mongodbConnection, CONNECT_OPTIONS, (err, client) => {
+			if (err) {
+				winston.error(
+					`MongoDB connection was failed: ${err.message}`,
+					err.message
+				);
+				reject(err);
+			} else {
+				_db = client.db(dbName);
+				_db.on('close', onClose);
+				_db.on('reconnect', onReconnect);
+				winston.info('MongoDB connected successfully');
 
-const connectWithRetry = () => {
-	MongoClient.connect(mongodbConnection, CONNECT_OPTIONS, (err, client) => {
-		if (err) {
-			winston.error(
-				`MongoDB connection was failed: ${err.message}`,
-				err.message
-			);
-			setTimeout(connectWithRetry, RECONNECT_INTERVAL);
-		} else {
-			db = client.db(dbName);
-			db.on('close', onClose);
-			db.on('reconnect', onReconnect);
-			winston.info('MongoDB connected successfully');
-		}
+				resolve(_db);
+			}
+		});
 	});
 };
 
-connectWithRetry();
+const db = () => _db;
+
+module.exports = {
+	connect,
+	db
+};

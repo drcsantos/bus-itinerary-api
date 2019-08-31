@@ -1,7 +1,7 @@
 [
   {
-    "id": "CSC-L10",
-    "name": "Americana",
+    "name": "CSC-L10",
+    "title": "Americana",
     "direction": "target",
     "city": "Americana",
     "paths": [
@@ -144,8 +144,8 @@
     "processing": 0
   },
   {
-    "id": "CSC-L07",
-    "name": "Centro/Cambui",
+    "name": "CSC-L07",
+    "title": "Centro/Cambui",
     "direction": "target",
     "city": "Campinas",
     "paths": [
@@ -385,8 +385,8 @@
     "processing": 0
   },
   {
-    "id": "CSC-L08",
-    "name": "Maternidade",
+    "name": "CSC-L08",
+    "title": "Maternidade",
     "direction": "target",
     "city": "Campinas",
     "paths": [
