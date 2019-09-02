@@ -2,7 +2,7 @@
   {
     "name": "CSC-L10",
     "title": "Americana",
-    "direction": "target",
+    "orientation": "target",
     "city": "Americana",
     "paths": [
       {
@@ -146,7 +146,7 @@
   {
     "name": "CSC-L07",
     "title": "Centro/Cambui",
-    "direction": "target",
+    "orientation": "target",
     "city": "Campinas",
     "paths": [
       {
@@ -387,7 +387,7 @@
   {
     "name": "CSC-L08",
     "title": "Maternidade",
-    "direction": "target",
+    "orientation": "target",
     "city": "Campinas",
     "paths": [
       {

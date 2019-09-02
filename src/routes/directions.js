@@ -24,6 +24,12 @@ const directionRoute = router => {
             .catch(next);
     });
 
+    router.delete('/directions/:id', (req, res, next) => {
+        directionService.deleteDirection(req.params.id)
+            .then(data => res.status(data ? 200 : 404).end())
+            .catch(next);
+    });
+
     return router;
 }
 

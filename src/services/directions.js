@@ -4,7 +4,8 @@ const parse = require('../lib/parse');
 const utils = require('../lib/utils');
 const ObjectID = require('mongodb').ObjectID;
 
-const DEFAULT_SORT = { orientation: -1, date_created: 1 };
+const DEFAULT_SORT = { orientation: -1, title: 1 };
+
 const collection = () => mongo.db().collection('directions');
 
 const getValidDocumentForInsert = data => {
@@ -19,12 +20,12 @@ const getValidDocumentForInsert = data => {
 const getFilter = (params = {}) => {
   const filter = {};
   const id = parse.getObjectIDIfValid(params.id);
-  const tags = parse.getString(params.tags);
+  const orientation = parse.getString(params.orientation);
   if (id) {
     filter._id = id;
   }
-  if (tags && tags.length > 0) {
-    filter.tags = tags;
+  if (orientation) {
+    filter.orientation = orientation;
   }
   return filter;
 }
@@ -81,8 +82,19 @@ const addDirection = data => {
   );
 }
 
+const deleteDirection = id => {
+  if (!ObjectID.isValid(id)) {
+    return Promise.reject('Invalid identifier');
+  }
+  const objectID = new ObjectID(id);
+  return collection()
+    .deleteOne({ _id: objectID })
+    .then(deleteResponse => deleteResponse.deletedCount > 0);
+}
+
 module.exports = {
   addDirection,
+  deleteDirection,
   getDirections,
   getSingleDirection
 };
