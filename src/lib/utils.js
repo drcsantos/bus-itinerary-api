@@ -13,10 +13,36 @@ const getProjectionFromFields = fields => {
 
 const deepCopy = obj => {
     return JSON.parse(JSON.stringify(obj));
+};
+
+function roundN(value, digits) {
+    const tenToN = 10 ** digits;
+    return (Math.trunc(value * tenToN)) / tenToN;
 }
+
+const coords = (lat, lng) => ({
+    coords: {
+        lat: roundN(lat, 6),
+        lng: roundN(lng, 6)
+    }
+})
+
+const getCenterFromPoints = points => {
+    let latSum = 0;
+    let lngSum = 0;
+    const average = value => points.length === 0 ? 0 : value / points.length;
+    points.forEach(point => {
+        const { lat, lng } = point.coords;
+        latSum += lat;
+        lngSum += lng;
+    });
+    return points.length === 0 ? null : coords(average(latSum), average(lngSum));
+};
 
 module.exports = {
     getCorrectFileName,
     getProjectionFromFields,
-    deepCopy
+    deepCopy,
+    coords,
+    getCenterFromPoints
 };

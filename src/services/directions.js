@@ -10,9 +10,17 @@ const collection = () => mongo.db().collection('directions');
 
 const getValidDocumentForInsert = data => {
   const direction = {
-    date_created: new Date(),
-    ...data
+    date_created: new Date()
   };
+
+  direction.name = parse.getString(data.name).toUpperCase();
+  direction.title = parse.getString(data.title);
+  direction.orientation = parse.getString(data.orientation).toLowerCase();
+  direction.city = parse.getString(data.city);  
+  direction.enabled = parse.getBooleanIfValid(data.enabled, true);
+  direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
+  direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
+  direction.center = utils.getCenterFromPoints(direction.wayPoints);
 
   return Promise.resolve(direction);
 }
@@ -74,6 +82,61 @@ const getSingleDirection = id => {
   );
 }
 
+const getValidDocumentForUpdate = (id, data) => {
+  if (Object.keys(data).length === 0) {
+    return Promise.reject('Required fields are missing');
+  }
+  return getSingleDirection(id).then(prevDirectionData => {
+    const direction = {
+      date_updated: new Date()
+    };
+
+    if (data.name !== undefined) {
+      direction.name = parse.getString(data.name).toUpperCase();
+    }
+
+    if (data.title !== undefined) {
+      direction.title = parse.getString(data.title);
+    }
+
+    if (data.orientation !== undefined) {
+      direction.orientation = parse.getString(data.orientation).toLowerCase();
+    }
+
+    if (data.city !== undefined) {
+      direction.city = parse.getString(data.city);
+    }
+
+    if (data.enabled !== undefined) {
+      direction.enabled = parse.getBooleanIfValid(data.enabled, true);
+    }
+
+    if (data.pathPoints !== undefined) {
+      direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];      
+    }
+
+    if (data.wayPoints !== undefined) {
+      direction.pathPoints = parse.getArrayIfValid(data.wayPoints) || [];
+      direction.center = utils.getCenterFromPoints(direction.pathPoints);
+    }
+
+    return direction;
+  });
+}
+
+const updateDirection = (id, data) => {
+  if (!ObjectID.isValid(id)) {
+    return Promise.reject('Invalid identifier');
+  }
+  const directionID = new ObjectID(id);
+
+  return getValidDocumentForUpdate(id, data).then(direction =>
+    collection()
+      .updateOne({ _id: directionID }, { $set: direction })
+      .then(res => getSinglePage(id))
+  );
+}
+
 const addDirection = data => {
   return getValidDocumentForInsert(data).then(direction =>
     collection()
@@ -94,6 +157,7 @@ const deleteDirection = id => {
 
 module.exports = {
   addDirection,
+  updateDirection,
   deleteDirection,
   getDirections,
   getSingleDirection

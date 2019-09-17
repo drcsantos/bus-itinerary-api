@@ -24,6 +24,17 @@ const directionRoute = router => {
             .catch(next);
     });
 
+    router.put('/directions/:id', (req, res, next) => {
+        directionService.updateDirection(req.params.id, req.body)
+            .then(data => {
+                if (data) {
+                    return res.send(data);
+                }
+                return res.status(404).end();
+            })
+            .catch(next);
+    });
+
     router.delete('/directions/:id', (req, res, next) => {
         directionService.deleteDirection(req.params.id)
             .then(data => res.status(data ? 200 : 404).end())
