@@ -29,11 +29,15 @@ const getFilter = (params = {}) => {
   const filter = {};
   const id = parse.getObjectIDIfValid(params.id);
   const orientation = parse.getString(params.orientation);
+  const enabled = parse.getString(params.enabled);
   if (id) {
     filter._id = id;
   }
   if (orientation) {
     filter.orientation = orientation;
+  }
+  if (enabled) {
+    filter.enabled = enable.toLowerCase() === 'true' ? true : false;
   }
   return filter;
 }
