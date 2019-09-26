@@ -21,18 +21,16 @@ function roundN(value, digits) {
 }
 
 const coords = (lat, lng) => ({
-    coords: {
-        lat: roundN(lat, 6),
-        lng: roundN(lng, 6)
-    }
+    lat: roundN(lat, 6),
+    lng: roundN(lng, 6)
 })
 
-const getCenterFromPoints = points => {
+const getCenterFromPoints = (points, useCoords = true) => {
     let latSum = 0;
     let lngSum = 0;
     const average = value => points.length === 0 ? 0 : value / points.length;
     points.forEach(point => {
-        const { lat, lng } = point.coords;
+        const { lat, lng } = useCoords ? point.coords : point;
         latSum += lat;
         lngSum += lng;
     });
