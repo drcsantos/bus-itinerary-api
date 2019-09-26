@@ -116,8 +116,8 @@ const getValidDocumentForUpdate = (id, data) => {
     }
 
     if (data.wayPoints !== undefined) {
-      direction.pathPoints = parse.getArrayIfValid(data.wayPoints) || [];
-      direction.center = utils.getCenterFromPoints(direction.pathPoints);
+      direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
+      direction.center = utils.getCenterFromPoints(direction.wayPoints);
     }
 
     return direction;
