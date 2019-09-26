@@ -1,4 +1,4 @@
-//const routes = require('../data/all.json');
+
 const mongo = require('../lib/mongo');
 const parse = require('../lib/parse');
 const utils = require('../lib/utils');
@@ -133,7 +133,7 @@ const updateDirection = (id, data) => {
   return getValidDocumentForUpdate(id, data).then(direction =>
     collection()
       .updateOne({ _id: directionID }, { $set: direction })
-      .then(res => getSinglePage(id))
+      .then(res => getSingleDirection(id))
   );
 }
 
