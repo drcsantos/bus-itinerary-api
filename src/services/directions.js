@@ -37,7 +37,7 @@ const getFilter = (params = {}) => {
     filter.orientation = orientation;
   }
   if (enabled) {
-    filter.enabled = enable.toLowerCase() === 'true' ? true : false;
+    filter.enabled = enabled.toLowerCase() === 'true' ? true : false;
   }
   return filter;
 }
