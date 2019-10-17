@@ -10,7 +10,7 @@ const getCorrectFileName = filename => {
 
 const getProjectionFromFields = fields => {
     const fieldsArray = fields && fields.length > 0 ? fields.split(',') : [];
-    return Object.assign({}, ...fieldsArray.map(key => ({ [key]: 1 })));
+    return Object.assign({}, ...fieldsArray.map(key => ({[key.startsWith('-') ? key.slice(1) : key]: key.startsWith('-') ? 0 : 1})));
 };
 
 const deepCopy = obj => {
