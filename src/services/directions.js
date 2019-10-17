@@ -16,7 +16,7 @@ const getValidDocumentForInsert = data => {
   direction.name = parse.getString(data.name).toUpperCase();
   direction.title = parse.getString(data.title);
   direction.orientation = parse.getString(data.orientation).toLowerCase();
-  direction.city = parse.getString(data.city);  
+  direction.city = parse.getString(data.city);
   direction.enabled = parse.getBooleanIfValid(data.enabled, true);
   direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
   direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
@@ -64,7 +64,7 @@ const getDirections = async (params = {}) => {
   const sortQuery = getSortQuery(params);
   const projection = utils.getProjectionFromFields(params.fields);
   const directions = await collection()
-    .find(filter, { projection })
+    .find(filter, { projection: projection === {} ? { wayPoints: 0, pathPoints: 0 } : projection })
     .sort(sortQuery)
     .toArray();
 
@@ -118,7 +118,7 @@ const getValidDocumentForUpdate = (id, data) => {
 
     if (data.pathPoints !== undefined) {
       direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
-      direction.length = utils.getRouteLength(direction.pathPoints, false);     
+      direction.length = utils.getRouteLength(direction.pathPoints, false);
     }
 
     if (data.wayPoints !== undefined) {
