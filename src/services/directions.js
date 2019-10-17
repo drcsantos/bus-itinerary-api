@@ -64,7 +64,7 @@ const getDirections = async (params = {}) => {
   const sortQuery = getSortQuery(params);
   const projection = utils.getProjectionFromFields(params.fields);
   const directions = await collection()
-    .find(filter, { projection: projection === {} ? { wayPoints: 0, pathPoints: 0 } : projection })
+    .find(filter, { projection: Object.keys(projection).length === 0 ? { wayPoints: 0, pathPoints: 0 } : projection })
     .sort(sortQuery)
     .toArray();
 
