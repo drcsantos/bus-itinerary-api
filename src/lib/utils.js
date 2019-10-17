@@ -1,3 +1,5 @@
+const haversine = require('haversine');
+
 const getCorrectFileName = filename => {
     if (filename) {
         // replace unsafe characters
@@ -25,7 +27,7 @@ const coords = (lat, lng) => ({
     lng: roundN(lng, 6)
 })
 
-const getCenterFromPoints = (points, useCoords = true) => {
+const getAverageFromPoints = (points, useCoords = true) => {
     let latSum = 0;
     let lngSum = 0;
     const average = value => points.length === 0 ? 0 : value / points.length;
@@ -37,10 +39,27 @@ const getCenterFromPoints = (points, useCoords = true) => {
     return points.length === 0 ? null : coords(average(latSum), average(lngSum));
 };
 
+const getRouteLength = (points, useCoords = true) => {
+    let distance = 0;
+    let lastPoint = null;
+    points.forEach(point => {
+        const coords = useCoords ? point.coords : point;
+        if (lastPoint) {
+            distante += haversine(
+                { latitude: lastPoint.lat, longitude: lastPoint.lng },
+                { latitude: coords.lat, longitude: coords.lng }
+            );
+        }
+        lastPoint = coords;
+    });
+    return distance;
+};
+
 module.exports = {
     getCorrectFileName,
     getProjectionFromFields,
     deepCopy,
     coords,
-    getCenterFromPoints
+    getAverageFromPoints,
+    getRouteLength
 };

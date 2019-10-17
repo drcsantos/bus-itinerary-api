@@ -20,7 +20,8 @@ const getValidDocumentForInsert = data => {
   direction.enabled = parse.getBooleanIfValid(data.enabled, true);
   direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
   direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
-  direction.center = utils.getCenterFromPoints(direction.wayPoints);
+  direction.center = utils.getAverageFromPoints(direction.wayPoints);
+  direction.length = utils.getRouteLength(direction.pathPoints, false);
 
   return Promise.resolve(direction);
 }
@@ -116,12 +117,13 @@ const getValidDocumentForUpdate = (id, data) => {
     }
 
     if (data.pathPoints !== undefined) {
-      direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];      
+      direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
+      direction.length = utils.getRouteLength(direction.pathPoints, false);     
     }
 
     if (data.wayPoints !== undefined) {
       direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
-      direction.center = utils.getCenterFromPoints(direction.wayPoints);
+      direction.center = utils.getAverageFromPoints(direction.wayPoints);
     }
 
     return direction;
