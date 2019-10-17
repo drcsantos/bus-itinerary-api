@@ -64,7 +64,7 @@ const getDirections = async (params = {}) => {
   const sortQuery = getSortQuery(params);
   const projection = utils.getProjectionFromFields(params.fields);
   const directions = await collection()
-    .find(filter, { projection: Object.keys(projection).length === 0 ? { wayPoints: 0, pathPoints: 0 } : projection })
+    .find(filter, { projection })
     .sort(sortQuery)
     .toArray();
 
@@ -119,11 +119,16 @@ const getValidDocumentForUpdate = (id, data) => {
     if (data.pathPoints !== undefined) {
       direction.pathPoints = parse.getArrayIfValid(data.pathPoints) || [];
       direction.length = utils.getRouteLength(direction.pathPoints, false);
-    }
+    }    
 
     if (data.wayPoints !== undefined) {
       direction.wayPoints = parse.getArrayIfValid(data.wayPoints) || [];
       direction.center = utils.getAverageFromPoints(direction.wayPoints);
+    }
+
+    // Adjustments
+    if (typeof direction.length === 'undefined' && typeof prevDirectionData.length === 'undefined') {
+      direction.length = utils.getRouteLength(prevDirectionData.pathPoints, false);
     }
 
     return direction;

@@ -2,6 +2,13 @@ const directionService = require('../services/directions');
 
 const directionRoute = router => {
     router.get('/directions', (req, res, next) => {
+        // TODO: BugFix for mobile, remove it
+        if (typeof req.query.enabled === 'undefined') {
+            if (!req.query.fields) {
+                req.query.fields = '-pathPoints,-wayPoints';
+            }            
+        }
+
         directionService.getDirections(req.query)
             .then(data => res.send(data))
             .catch(next);
