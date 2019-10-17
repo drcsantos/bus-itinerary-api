@@ -45,7 +45,7 @@ const getRouteLength = (points, useCoords = true) => {
     points.forEach(point => {
         const coords = useCoords ? point.coords : point;
         if (lastPoint) {
-            distante += haversine(
+            distance += haversine(
                 { latitude: lastPoint.lat, longitude: lastPoint.lng },
                 { latitude: coords.lat, longitude: coords.lng }
             );
