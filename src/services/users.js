@@ -14,8 +14,8 @@ const getValidDocumentForInsert = data => {
   };
 
   user.name = parse.getString(data.name);
-  user.email = parse.getString(data.title).toLowerCase();
-  user.password = parse.getString(data.orientation);
+  user.email = parse.getString(data.email).toLowerCase();
+  user.password = parse.getString(data.password);
   user.enabled = parse.getBooleanIfValid(data.enabled, true);
 
   return Promise.resolve(user);
