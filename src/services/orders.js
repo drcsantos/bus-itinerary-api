@@ -25,8 +25,8 @@ const getValidDocumentForInsert = data => {
 const getFilter = (params = {}) => {
   const filter = {};
   const id = parse.getObjectIDIfValid(params.id);
-  const paymentMethod = parse.getString(params.paymentMethod);
-  const customer = parse.getString(params.customer);
+  const paymentMethod = parse.getObjectIDIfValid(params.paymentMethod);
+  const customer = parse.getObjectIDIfValid(params.customer);
   const enabled = parse.getString(params.enabled);
   if (id) {
     filter._id = id;
