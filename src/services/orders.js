@@ -13,7 +13,7 @@ const getValidDocumentForInsert = data => {
     date_created: new Date()
   };
 
-  order.products = parse.getArrayOfObjectID(data.products);
+  order.products = parse.getArrayIfValid(data.products) || [];
   order.paymentMethod = parse.getObjectIDIfValid(data.paymentMethod);
   order.customer = parse.getObjectIDIfValid(data.customer);
   order.shippingAddress = data.shippingAddress;
@@ -97,7 +97,7 @@ const getValidDocumentForUpdate = (id, data) => {
     };
 
     if (data.products !== undefined) {
-      order.products = parse.getArrayOfObjectID(data.products);
+      order.products = parse.getArrayIfValid(data.products) || [];
     }
 
     if (data.paymentMethod !== undefined) {
