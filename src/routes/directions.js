@@ -26,29 +26,26 @@ const directionRoute = router => {
     });
 
     router.post('/directions', (req, res, next) => {
-        res.status(401).end();
-        /*directionService.addDirection(req.body)
+        directionService.addDirection(req.body)
             .then(data => res.send(data))
-            .catch(next);*/
+            .catch(next);
     });
 
     router.put('/directions/:id', (req, res, next) => {
-        res.status(401).end();
-        /*directionService.updateDirection(req.params.id, req.body)
+        directionService.updateDirection(req.params.id, req.body)
             .then(data => {
                 if (data) {
                     return res.send(data);
                 }
                 return res.status(404).end();
             })
-            .catch(next);*/
+            .catch(next);
     });
 
     router.delete('/directions/:id', (req, res, next) => {
-        res.status(401).end();
-        /*directionService.deleteDirection(req.params.id)
+        directionService.deleteDirection(req.params.id)
             .then(data => res.status(data ? 200 : 404).end())
-            .catch(next);*/
+            .catch(next);
     });
 
     return router;
