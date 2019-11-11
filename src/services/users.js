@@ -142,10 +142,32 @@ const deleteUser = id => {
     .then(deleteResponse => deleteResponse.deletedCount > 0);
 }
 
+const login = (email, pass) => {
+  return new Promise((resolve, reject) => {
+    getUsers({
+      email: email.toLowerCase(),
+      password: pass,
+      enabled: true
+    }).then(users => {
+      if (users.length > 0) {
+        const user = users[0];
+        resolve({
+          id: user.id,
+          name: user.name,
+          email: user.email
+        });
+      } else {
+        reject(new Error("E-mail or Password invalid."));
+      }
+    }).catch(() => reject(new Error("E-mail or Password invalid.")));
+  });
+}
+
 module.exports = {
   addUser,
   updateUser,
   deleteUser,
   getUsers,
-  getSingleUser
+  getSingleUser,
+  login
 };

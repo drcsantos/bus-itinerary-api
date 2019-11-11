@@ -1,6 +1,14 @@
 const userService = require('../services/users');
 
 const userRoute = router => {
+    router.post('/users/login', (req, res, next) => {
+        const email = req.query.email;
+        const pass = req.query.password;
+        userService.login(email, pass)
+            .then(data => res.send(data))
+            .catch(error => res.status(401).send(error));
+    });
+
     router.get('/users', (req, res, next) => {
         userService.getUsers(req.query)
             .then(data => res.send(data))
