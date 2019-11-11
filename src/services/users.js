@@ -146,11 +146,10 @@ const login = (email, pass) => {
   return new Promise((resolve, reject) => {
     getUsers({
       email: email.toLowerCase(),
-      password: pass,
       enabled: true
     }).then(users => {
-      if (users.length > 0) {
-        const user = users[0];
+      const user = users[0];
+      if (user && user.password === pass) {
         resolve({
           id: user.id,
           name: user.name,
