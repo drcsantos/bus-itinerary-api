@@ -12,6 +12,7 @@ const dbUrl =
 
 module.exports = {
     apiBaseUrl: process.env.API_BASE_URL || `http://localhost:4000/api/`,
+    accountDomainBase: process.env.ACCOUNT_DOMAIN_BASE || '',
     apiListenPort: process.env.PORT || 4000,
     mongodbServerUrl: dbUrl,
     // assest
@@ -25,5 +26,10 @@ module.exports = {
     jwtSecretKey: process.env.JWT_SECRET_KEY || '123456',
     // UI language
     language: process.env.LANGUAGE || 'en',
+    
+    // cost factor, controls how much time is needed to calculate a single BCrypt hash
+	// for production: recommended salRounds > 12
+    saltRounds: process.env.SALT_ROUNDS || 12,
+    
     developerMode: process.env.DEVELOPER_MODE || true
 };
