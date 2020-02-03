@@ -162,7 +162,7 @@ const updateAccount = async (id, data) => {
     }
   );
 
-  const updatedAccount = await this.getSingleAccount(id);
+  const updatedAccount = await getSingleAccount(id);
   return updatedAccount;
 };
 

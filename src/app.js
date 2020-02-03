@@ -6,6 +6,7 @@ const winston = require("winston");
 const logger = require("./lib/logger");
 const morgan = require("morgan");
 const apiRouter = require("./apiRouter");
+const authRouter = require("./authentication");
 const app = express();
 const mongo = require('./lib/mongo');
 
@@ -38,6 +39,7 @@ mongo.connect().then(() => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json({limit: '50mb'}));
   app.use("/api", apiRouter);
+  app.use("/auth", authRouter);
   app.use(logger.sendResponse);
 
   const port = process.env.PORT || 4000;
