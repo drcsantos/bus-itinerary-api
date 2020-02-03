@@ -1,4 +1,5 @@
 const AccountsService = require("../services/accounts");
+const security = require("../lib/security");
 
 const accountRoute = router => {
   const getAccounts = (req, res, next) => {
